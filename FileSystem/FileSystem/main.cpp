@@ -1,4 +1,4 @@
-#include <string>
+п»ї#include <string>
 #include <iostream>
 #include <fstream>
 #include <sstream>
@@ -8,25 +8,25 @@ using namespace std;
 int main(){
 	setlocale(LC_ALL, "");
 	ifstream in("input.txt");
-	string word;//слово
-	cout << "Введите колчиество слов: ";
+	string word;//СЃР»РѕРІРѕ
+	cout << "Р’РІРµРґРёС‚Рµ РєРѕР»С‡РёРµСЃС‚РІРѕ СЃР»РѕРІ: ";
 	int max;
-	stringstream ss;	//строковый поток
-	while(!(cin >> max)){cin.clear();}//защита от некорреткного ввода
-	int cnt = 1;//счётчик
-	while(in >> word){//считываем по слову
+	stringstream ss;	//СЃС‚СЂРѕРєРѕРІС‹Р№ РїРѕС‚РѕРє
+	while(!(cin >> max)){cin.clear();}//Р·Р°С‰РёС‚Р° РѕС‚ РЅРµРєРѕСЂСЂРµС‚РєРЅРѕРіРѕ РІРІРѕРґР°
+	int cnt = 1;//СЃС‡С‘С‚С‡РёРє
+	while(in >> word){//СЃС‡РёС‚С‹РІР°РµРј РїРѕ СЃР»РѕРІСѓ
 		ss << " " << word;
-		if(word[word.size() - 1] == '.'){//если наткнулись на точку
-		   if(cnt == max){//если  равно заданному количеству
-			  	cout << ss.str();// выводим предложение
+		if(word[word.size() - 1] == '.'){//РµСЃР»Рё РЅР°С‚РєРЅСѓР»РёСЃСЊ РЅР° С‚РѕС‡РєСѓ
+		   if(cnt == max){//РµСЃР»Рё  СЂР°РІРЅРѕ Р·Р°РґР°РЅРЅРѕРјСѓ РєРѕР»РёС‡РµСЃС‚РІСѓ
+			  	cout << ss.str();// РІС‹РІРѕРґРёРј РїСЂРµРґР»РѕР¶РµРЅРёРµ
 		   }
-		   ss.clear();//очищаем поток вывода
+		   ss.clear();//РѕС‡РёС‰Р°РµРј РїРѕС‚РѕРє РІС‹РІРѕРґР°
 		   ss.str(std::string());
 		   cnt = 0;
 		}
 		++cnt;
 	}
-	in.close();//закрываем файл										   
+	in.close();//Р·Р°РєСЂС‹РІР°РµРј С„Р°Р№Р»										   
 	system("pause>>void");
 
 }
